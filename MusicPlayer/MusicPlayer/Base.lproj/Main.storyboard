@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Nl-TY-8nX">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lj3-sc-oxK">
+                                <rect key="frame" x="132" y="94" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0mK-ro-EKO"/>
+                                    <constraint firstAttribute="height" constant="150" id="tyG-pm-3Tw"/>
+                                </constraints>
+                                <state key="normal" image="play_btn"/>
+                                <state key="highlighted" image="play_btn"/>
+                                <connections>
+                                    <action selector="touchUpPlayPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nre-1c-dDt"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-tj-lNy">
+                                <rect key="frame" x="42.5" y="374" width="329" height="30"/>
+                                <color key="tintColor" red="0.96217399839999995" green="0.76967495679999998" blue="0.32536458969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="pcN-vx-9aQ"/>
+                                    <constraint firstAttribute="width" constant="325" id="wdc-ld-4EJ"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="nZh-l5-MPB"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osJ-gP-mWg">
+                                <rect key="frame" x="44.5" y="294" width="325" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="42S-x0-3ir"/>
+                                    <constraint firstAttribute="width" constant="325" id="tXD-7g-U79"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.96620899438858032" green="0.48449116665496245" blue="0.45025957124774535" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="osJ-gP-mWg" firstAttribute="top" secondItem="lj3-sc-oxK" secondAttribute="bottom" constant="50" id="GNf-hX-rET"/>
+                            <constraint firstItem="lj3-sc-oxK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SC5-a2-dMf"/>
+                            <constraint firstItem="ZYx-tj-lNy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gG2-XJ-lJL"/>
+                            <constraint firstItem="osJ-gP-mWg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hqZ-R9-wSj"/>
+                            <constraint firstItem="ZYx-tj-lNy" firstAttribute="top" secondItem="osJ-gP-mWg" secondAttribute="bottom" constant="59" id="pU6-pQ-duO"/>
+                            <constraint firstItem="lj3-sc-oxK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="ueg-p7-Frn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="playPauseButton" destination="lj3-sc-oxK" id="xHZ-lC-IcW"/>
+                        <outlet property="progressSlider" destination="ZYx-tj-lNy" id="gBb-7V-AIH"/>
+                        <outlet property="timeLabel" destination="osJ-gP-mWg" id="bdQ-X8-8wy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hgM-DI-Tnn">
+            <objects>
+                <viewController id="9Nl-TY-8nX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X0x-NP-Cef" userLabel="SuperView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ctk-Kr-hzg">
+                                <rect key="frame" x="87" y="335" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96620899439999997" green="0.48449116669999998" blue="0.45025957119999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Epe-U5-2aA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pf5-6p-oeP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="121"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play_btn" width="512" height="512"/>
+    </resources>
+</document>

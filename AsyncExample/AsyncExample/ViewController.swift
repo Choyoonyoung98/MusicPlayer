@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         //http://eskipaper.com/images/large-2.jpg
         let imageURL: URL = URL(string: "http://eskipaper.com/images/large-2.jpg")!
 
-        
+        //백그라운드와 메인스레드 왔다갔다
         OperationQueue().addOperation {
             let imageData: Data = try! Data.init(contentsOf: imageURL) //동기 메서드 - 이 메서드 동작이 끝날 때까지 아무것도 못함
             let image: UIImage = UIImage(data: imageData)!

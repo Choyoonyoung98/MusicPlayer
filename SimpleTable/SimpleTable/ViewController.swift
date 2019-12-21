@@ -103,5 +103,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
 
+    //MARK: -Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
+        
+//        segue.identifier
+        
+        guard let nextViewController: SecondViewController = segue.destination as? SecondViewController else {
+            return
+        }
+        
+        guard let cell: UITableViewCell = sender as? UITableViewCell else{
+            return
+        }
+        
+        nextViewController.textToSet=cell.textLabel?.text
+        
+        //label에 직접 셋팅해주려고 하면 오류가 난다! 왜? 레이블이 아직 생성되기 전이므로!
+        
+    }
+    
 }
 
